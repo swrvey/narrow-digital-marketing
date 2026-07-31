@@ -24,36 +24,25 @@ URLs show as `/about/index.html` instead of `/about/`. Both are correct once it'
 
 ## What's left before you launch
 
-Six things. Nothing else on the site is a dummy value.
+Four things. Everything else is done — real copy, your photo, your domain.
 
 | # | What | Where |
 |---|---|---|
-| 1 | **Your photo** | `src/assets/img/` — see below |
-| 2 | **Your phone number** | `src/_data/site.json` → `phone` and `phoneHref` |
-| 3 | **Confirm your domain and email** | `src/_data/site.json` → `url` and `email` |
-| 4 | **Web3Forms access key** | `src/contact.njk` — see below |
-| 5 | **Banning Glass: year + live link** | top of `src/work/banning-glass-mirror-and-screen.njk` |
-| 6 | **Cover image for Banning Glass** | replace `placeholder-work.svg` |
+| 1 | **Your phone number** | `src/_data/site.json` → `phone` and `phoneHref` |
+| 2 | **Web3Forms access key** | `src/contact.njk`, between the two arrow comments |
+| 3 | **Replace the Banning Glass cover image** | it's currently a Google Street View crop — see the note at the top of `src/work/banning-glass-mirror-and-screen.njk` |
+| 4 | **Banning Glass year + live link** | same file, in the front matter |
 
-Everything needing your input is flagged `CONFIRM` in `site.json`, or sits in an HTML comment
-right above the line it affects. Search the `src` folder for `CONFIRM` to find them all.
+Also worth a read: the contact page promises a reply "within a day", and About step 01 says you
+walk people through what you found whether or not they hire you. Both are flagged in comments.
+Change them if they're not true.
 
-### 1. Your photo
+Anything needing your input is marked `CONFIRM` in `site.json` or sits in a comment directly
+above the line it affects.
 
-Two places use it: the About page (main) and the homepage teaser.
+### Connecting the contact form (Web3Forms)
 
-1. Save it as `src/assets/img/about-photo.jpg`
-2. **Size:** 800 × 1000px (4:5 portrait). JPG or WebP, under 250KB. Plain background, natural
-   light, chest up — outdoors in shade or against a wall both work well with this layout.
-3. In `src/about.njk` and `src/index.njk`, find the block marked `YOUR PHOTO` and change
-   `src="/assets/img/placeholder-portrait.svg"` to `src="/assets/img/about-photo.jpg"`.
-
-The alt text is already written. Different shaped photo? Change `aspect-ratio: 4 / 5` on
-`.about__photo` in `style.css`.
-
-### 4. Connect the contact form (Web3Forms)
-
-1. Go to [web3forms.com](https://web3forms.com) and enter your email address.
+1. Go to [web3forms.com](https://web3forms.com) and enter `hello@narrowdigital.tech`.
 2. They email you an access key — a long string like `1a2b3c4d-5e6f-...`.
 3. In `src/contact.njk`, find the line between the two arrow comments and paste your key in
    place of `YOUR-WEB3FORMS-ACCESS-KEY-HERE`.
@@ -62,6 +51,12 @@ The alt text is already written. Different shaped photo? Change `aspect-ratio: 4
 Free, unlimited submissions, no dashboard to log into. Messages land in your inbox; nothing is
 stored on the site. Until the key is in, the form shows a clear error instead of failing
 silently. A hidden honeypot field catches most bots.
+
+### Swapping your photo later
+
+Drop a new file in `src/assets/img/`, then update the `src` and `srcset` in the block marked
+`YOUR PHOTO` in both `src/about.njk` and `src/index.njk`. Keep it 4:5 portrait. If you send me
+a new one I'll cut the three sizes and wire it up.
 
 ---
 
