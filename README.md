@@ -131,7 +131,10 @@ It appears on `/work/`, on the homepage, and in `sitemap.xml` automatically.
 
 ## Deploy
 
-`_site/` is the folder to publish. All three hosts do the same thing:
+**Your setup — Hostinger domain, Cloudflare Pages, GitHub — is written up step by step in
+[DEPLOY.md](DEPLOY.md). Start there.**
+
+The generic version, if you ever move hosts: `_site/` is the folder to publish.
 
 **Cloudflare Pages** — connect the repo, then build command `npm run build`, output directory
 `_site`.
