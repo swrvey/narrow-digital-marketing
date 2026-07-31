@@ -1,0 +1,5 @@
+{
+  "_README": "Directory data file. Every .njk file in this folder inherits these settings, so a new case study only needs its own front matter. The filename becomes the URL: banning-glass-mirror-and-screen.njk -> /work/banning-glass-mirror-and-screen/",
+  "layout": "layouts/case.njk",
+  "tags": "work"
+}

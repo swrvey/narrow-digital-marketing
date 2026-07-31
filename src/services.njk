@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+permalink: /services/
+title: "Services — Local SEO, websites & Google Ads | Narrow Digital"
+description: "Local SEO, hand-coded websites, Google Ads, reviews and tracking for small businesses in Yucaipa, Banning and the Inland Empire. Every quote priced by hand."
+---
+
+{# ==========================================================================
+   SERVICES
+   All copy lives in src/_data/services.json so the homepage teaser and this
+   page never fall out of sync. Edit that file, not this one.
+   ========================================================================== #}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="wrap" data-reveal-group>
+    <span class="eyebrow reveal">Services</span>
+    <h1 class="reveal" style="margin-top:1rem;">
+      Everything that gets a local business found and called<span class="diamond" aria-hidden="true"></span>
+    </h1>
+    <p class="lede reveal">
+      Built for small businesses and the trades &mdash; glass companies, plumbers, HVAC,
+      landscaping, and everyone else who lives off the next phone call.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SERVICE LIST ============ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="rows" data-reveal-group>
+
+      {% for s in services.items %}
+        <div class="row reveal" id="{{ s.slug }}">
+          <span class="row__num">{{ s.num }}</span>
+          <span class="row__title">{{ s.title | safe }}</span>
+          <div class="row__body">
+            <p>{{ s.summary }}</p>
+            {% for para in s.detail %}
+              <p style="margin-top:0.9rem;">{{ para }}</p>
+            {% endfor %}
+            <ul class="tags">
+              {% for d in s.deliverables %}<li>{{ d | safe }}</li>{% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="split" data-reveal-group>
+      <div class="reveal">
+        <span class="eyebrow">Pricing</span>
+      </div>
+      <div class="reveal">
+        <h2>Every quote is priced by hand</h2>
+        <p class="mt-4">
+          There is no price list on this page because there is no set price. A one-truck plumber
+          who needs a Google Business Profile straightened out and a shop that needs a new site
+          with ads running behind it are different jobs. Charging them the same would mean
+          overcharging one of them, and I am not interested in doing that.
+        </p>
+        <p class="mt-4">
+          So I look at what the work actually takes, and I set the number myself &mdash; fairly,
+          and with your situation in front of me. You get the price and what is included before
+          anything starts, and it does not move afterwards unless you ask for something we did
+          not agree on. If the honest answer is that you do not need what I do yet, I will tell
+          you that instead.
+        </p>
+        <p class="mt-4"><a class="btn" href="/contact/">Ask for a quote</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

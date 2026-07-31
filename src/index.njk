@@ -1,0 +1,138 @@
+---
+layout: layouts/base.njk
+title: "Narrow Digital Marketing — Local marketing for small businesses"
+description: "Local SEO, websites and Google Ads for small businesses in Yucaipa, Banning and the Inland Empire. Built and maintained by Pedro Ruiz."
+---
+
+{# ==========================================================================
+   HOME
+   Sections: hero -> services teaser -> about teaser -> work -> CTA
+   ========================================================================== #}
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap" data-reveal-group>
+
+    {# The logo lockup, exported from your original file. Height is set in CSS. #}
+    <div class="hero__logo reveal">
+      <img src="/assets/img/logo-lockup.svg" alt="Narrow Digital Marketing" width="360" height="138">
+    </div>
+
+    <!--
+      TAGLINE — swap freely, keep it under about 8 words. Alternatives:
+        "Marketing that makes the phone ring."
+        "Local marketing, done properly."
+        "The work behind getting found."
+    -->
+    <h1 class="hero__title reveal">
+      Get found by the people already looking<span class="diamond" aria-hidden="true"></span>
+    </h1>
+
+    <div class="hero__meta reveal">
+      <a class="btn" href="/contact/">Start a project</a>
+      <a class="link-arrow" href="/work/">See the work <span aria-hidden="true">&rarr;</span></a>
+    </div>
+
+    <a class="hero__scroll" href="#what-i-do">Scroll</a>
+  </div>
+</section>
+
+<!-- ============ WHAT I DO (teaser — pulls the first 3 from src/_data/services.json) ============ -->
+<section class="section section--tight" id="what-i-do">
+  <div class="wrap">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">01 &mdash; What I do</span>
+      <h2>Marketing built for businesses that run on phone calls</h2>
+    </div>
+
+    <div class="rows" data-reveal-group>
+      {% for s in services.items %}
+        {% if loop.index0 < 3 %}{# change 3 to show more or fewer on the homepage #}
+          <a class="row reveal" href="/services/#{{ s.slug }}">
+            <span class="row__num">{{ s.num }}</span>
+            <span class="row__title">{{ s.title | safe }}</span>
+            <span class="row__body">{{ s.summary }}</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="mt-4 reveal">
+      <a class="link-arrow" href="/services/">All services <span aria-hidden="true">&rarr;</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ ABOUT TEASER ============ -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="split split--even" data-reveal-group>
+
+      <!--
+        ============================================================
+        YOUR PHOTO — homepage teaser. Same file as the About page.
+        Swap it in both places if you change it.
+        ============================================================
+      -->
+      <div class="about__photo reveal">
+        <img src="/assets/img/about-photo.jpg"
+             srcset="/assets/img/about-photo-600.jpg 600w, /assets/img/about-photo-900.jpg 900w, /assets/img/about-photo.jpg 1200w"
+             sizes="(min-width: 900px) 45vw, 92vw"
+             alt="Portrait of Pedro Ruiz, founder of Narrow Digital Marketing"
+             width="1200" height="1500" loading="lazy">
+      </div>
+
+      <div class="about__body reveal">
+        <span class="eyebrow">02 &mdash; About</span>
+        <h2>I build for the businesses I grew up around</h2>
+
+        <p>
+          I&rsquo;m Pedro. I&rsquo;m twenty, I live in Yucaipa, and my dad runs a landscaping
+          business &mdash; so I know what a slow month feels like from the inside. I work with
+          small businesses in the Inland Empire, one at a time.
+        </p>
+
+        <p><a class="link-arrow" href="/about/">More about me <span aria-hidden="true">&rarr;</span></a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELECTED WORK ============ -->
+<section class="section">
+  <div class="wrap">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">03 &mdash; Selected work</span>
+      <h2>One project at a time, done properly</h2>
+    </div>
+
+    <div class="work-list" data-reveal-group>
+      {# Shows the most recent case study from /src/work/. Add a file there and it appears here. #}
+      {% for item in collections.work | reverse %}
+        {% if loop.index0 < 1 %}
+          <a class="work-card reveal" href="{{ item.url }}">
+            <div class="work-card__media">
+              <img src="{{ item.data.cover }}"
+                   srcset="/assets/img/banning-glass-storefront-800.jpg 800w, /assets/img/banning-glass-storefront.jpg 1600w"
+                   sizes="(min-width: 1280px) 1200px, 92vw"
+                   alt="{{ item.data.coverAlt }}" width="1600" height="1000" loading="lazy">
+            </div>
+            <div class="work-card__meta">
+              <span class="work-card__title">{{ item.data.client }}</span>
+              <span class="work-card__tag">{{ item.data.tag }}</span>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="mt-4 reveal">
+      <a class="link-arrow" href="/work/">All work <span aria-hidden="true">&rarr;</span></a>
+    </p>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

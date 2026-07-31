@@ -1,0 +1,119 @@
+---
+layout: layouts/base.njk
+permalink: /about/
+title: "About Pedro Ruiz — Narrow Digital Marketing"
+description: "I'm Pedro Ruiz, based in Yucaipa, California. I build and maintain marketing for small businesses across the Inland Empire, and I'm studying cloud engineering at WGU."
+---
+
+{# ==========================================================================
+   ABOUT
+   Sections: page hero -> about (photo + bio) -> how I work -> CTA
+   The bio is written. Swap the photo and you're done.
+   ========================================================================== #}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="wrap" data-reveal-group>
+    <span class="eyebrow reveal">About</span>
+    <h1 class="reveal" style="margin-top:1rem;">
+      I build for the businesses I grew up around<span class="diamond" aria-hidden="true"></span>
+    </h1>
+    <p class="lede reveal">
+      Pedro Ruiz &mdash; based in Yucaipa, California, working with small businesses
+      across the Inland Empire.
+    </p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ME ============ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="split split--sticky" data-reveal-group>
+
+      <!--
+        ============================================================
+        YOUR PHOTO — main About page portrait.
+        Currently: about-photo.jpg — cropped 4:5 from the photo you sent,
+        1200 x 1500px (2x for retina screens), 179KB.
+        To swap it, drop a new file in src/assets/img/ and change the src
+        below. Keep it 4:5 portrait, under 250KB.
+        If a future photo is a different shape, change the aspect-ratio on
+        .about__photo in assets/css/style.css.
+        ============================================================
+      -->
+      <div class="about__photo reveal">
+        <img src="/assets/img/about-photo.jpg"
+             srcset="/assets/img/about-photo-600.jpg 600w, /assets/img/about-photo-900.jpg 900w, /assets/img/about-photo.jpg 1200w"
+             sizes="(min-width: 900px) 45vw, 92vw"
+             alt="Portrait of Pedro Ruiz, founder of Narrow Digital Marketing"
+             width="1200" height="1500">
+      </div>
+
+      <div class="about__body reveal">
+
+        <!-- ABOUT ME: this is your bio. Edit freely — it's written to sound like you, not like a brochure. -->
+        <p>
+          I&rsquo;m Pedro. I&rsquo;m twenty years old, I live in Yucaipa, and I run Narrow
+          Digital Marketing on my own. I work with small businesses &mdash; the kind where the
+          owner answers the phone, and a quiet week is something you feel.
+        </p>
+        <p>
+          I come from a hardworking family. My dad owns a landscaping business, so I grew up
+          watching what it actually takes to run one: the early starts, the word of mouth, the
+          stretch between a good month and a slow one. That is who I build for. When I say I
+          understand small business, I mean I watched it from the kitchen table.
+        </p>
+        <p>
+          Alongside this I&rsquo;m studying cloud engineering at Western Governors University.
+          That is partly why I hand-code the sites I build instead of dragging blocks around a
+          page builder &mdash; I would rather understand what is under the hood than hope a
+          plugin keeps working.
+        </p>
+        <p>
+          I&rsquo;m a Christian, and it shapes how I work more than what I say about it: do what
+          you said you would do, quote fairly, and tell people the truth even when it costs me
+          the job. If I don&rsquo;t think I can help you, I would rather say so than take your
+          money. Integrity and hard work are most of what I have to offer right now, and I take
+          both seriously.
+        </p>
+        <!-- /ABOUT ME -->
+
+        <!--
+          FACTS LIST — everything here is true and checkable. Keep it that way.
+          Add a row when there is something real to add; delete any row you'd rather not publish.
+        -->
+        <ul class="facts">
+          <li><span class="facts__k">Based in</span> <span class="facts__v">{{ site.location }}</span></li>
+          <li><span class="facts__k">Serving</span> <span class="facts__v">{{ site.serviceArea }}</span></li>
+          <li><span class="facts__k">Studying</span> <span class="facts__v">Cloud engineering, WGU</span></li>
+          <li><span class="facts__k">Email</span> <span class="facts__v"><a class="link" href="mailto:{{ site.email }}">{{ site.email }}</a></span></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW I WORK (from src/_data/services.json -> "process") ============ -->
+<section class="section section--alt">
+  <div class="wrap">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">How I work</span>
+      <h2>No jargon, no lock-in, no guessing</h2>
+    </div>
+
+    <div class="rows" data-reveal-group>
+      {% for step in services.process %}
+        <div class="row reveal">
+          <span class="row__num">{{ step.num }}</span>
+          <span class="row__title">{{ step.title | safe }}</span>
+          <span class="row__body"><p>{{ step.body }}</p></span>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

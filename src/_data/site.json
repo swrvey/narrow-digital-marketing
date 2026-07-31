@@ -1,0 +1,36 @@
+{
+  "_comment": "GLOBAL SITE INFO — edit this file once and it updates every page. Three values still need your confirmation, marked CONFIRM below.",
+
+  "name": "Narrow Digital Marketing",
+  "shortName": "Narrow",
+  "owner": "Pedro Ruiz",
+
+  "url": "https://narrowdigital.tech",
+  "_url_note": "Your live domain. No trailing slash. Builds canonical tags, sitemap.xml and robots.txt.",
+
+  "email": "hello@narrowdigital.tech",
+  "_email_note": "CONFIRM — set this address up (Cloudflare Email Routing is free) before launch. It appears in the nav menu, the footer, the CTA band and the contact page.",
+
+  "phone": "(000) 000-0000",
+  "phoneHref": "+10000000000",
+  "_phone_note": "CONFIRM — the only thing left that is still a dummy value. phoneHref is the tel: link: digits only, with country code, e.g. +19095551234. If you would rather not publish a number, delete both lines and remove the phone rows from contact.njk and footer.njk.",
+
+  "location": "Yucaipa, California",
+
+  "serviceArea": "Yucaipa, Banning and the Inland Empire",
+  "_serviceArea_note": "Widen or narrow this as you take on work. Keep it truthful — it is a local search signal.",
+
+  "hours": "Weekdays, and most evenings",
+  "_hours_note": "CONFIRM — change to whatever is actually true for you, or delete the Hours row on the contact page.",
+
+  "social": [],
+  "_social_note": "Empty on purpose — an empty footer beats a link that goes nowhere. When you have profiles, add rows like { \"label\": \"Instagram\", \"url\": \"https://instagram.com/...\" }",
+
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "Services", "url": "/services/" },
+    { "label": "Work", "url": "/work/" },
+    { "label": "Contact", "url": "/contact/" }
+  ]
+}

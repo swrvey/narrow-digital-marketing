@@ -1,0 +1,149 @@
+---
+layout: layouts/base.njk
+permalink: /contact/
+# ---------------------------------------------------------------------------
+# SEO — title 50–60 characters, description 140–155.
+# ---------------------------------------------------------------------------
+title: "Contact — Narrow Digital Marketing"
+description: "Tell me about your business and what you need. Serving Yucaipa, Banning and the Inland Empire. No obligation, and an honest answer either way."
+---
+
+{# ==========================================================================
+   CONTACT
+   The form posts to Web3Forms. See the ACCESS KEY block below — that is the
+   only thing you need to change to make it work.
+   ========================================================================== #}
+
+<section class="page-hero">
+  <div class="wrap" data-reveal-group>
+    <span class="eyebrow reveal">Contact</span>
+    <h1 class="reveal" style="margin-top:1rem;">
+      Tell me about the work<span class="diamond" aria-hidden="true"></span>
+    </h1>
+    <p class="lede reveal">
+      <!-- The reply time below is a promise you'll be held to. Change "within a day" if that's tight. -->
+      Tell me what you do and where you work, and I&rsquo;ll get back to you within a day. If I
+      can help, I&rsquo;ll tell you how. If I can&rsquo;t, I&rsquo;ll tell you that too.
+    </p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="split" data-reveal-group>
+
+      <!-- ============ CONTACT DETAILS ============ -->
+      <div class="reveal">
+        <ul class="contact-details">
+          {# All of these come from src/_data/site.json — edit them there. #}
+          <li>
+            <h4>Email</h4>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          </li>
+          <li>
+            <h4>Phone</h4>
+            <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+          </li>
+          <li>
+            <h4>Based in</h4>
+            <span>{{ site.location }}</span>
+          </li>
+          <li>
+            <h4>Service area</h4>
+            <span>{{ site.serviceArea }}</span>
+          </li>
+          <li>
+            <h4>Hours</h4>
+            <span>{{ site.hours }}</span>
+          </li>
+        </ul>
+
+        <!--
+          The phone number above is still a dummy value — set "phone" and "phoneHref" in
+          src/_data/site.json, or delete the Phone row entirely. Once that's done you can
+          delete this comment.
+        -->
+      </div>
+
+      <!-- ============ FORM ============ -->
+      <div class="reveal">
+        <!--
+          ==========================================================================
+          CONNECTING THE FORM — Web3Forms (free, unlimited, no account dashboard).
+
+          1. Go to https://web3forms.com and enter your email address.
+          2. They email you an access key (a long string like 1a2b3c4d-....).
+          3. Paste it into the value="" of the hidden input directly below,
+             replacing YOUR-WEB3FORMS-ACCESS-KEY-HERE.
+          4. Submit the form once from the live site to confirm it arrives.
+
+          That is the only change needed. Submissions are emailed to the address
+          you registered; nothing is stored on this site.
+          ==========================================================================
+        -->
+        <form class="form" data-contact-form action="https://api.web3forms.com/submit" method="POST">
+
+          <!-- ↓↓↓ PASTE YOUR WEB3FORMS ACCESS KEY HERE ↓↓↓ -->
+          <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY-HERE">
+          <!-- ↑↑↑ PASTE YOUR WEB3FORMS ACCESS KEY HERE ↑↑↑ -->
+
+          {# Subject line of the email you receive. Change the text if you like. #}
+          <input type="hidden" name="subject" value="New enquiry from narrowdigital.tech">
+          <input type="hidden" name="from_name" value="{{ site.name }} website">
+
+          {# Honeypot: hidden from people, filled in by bots, silently rejected. #}
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="First and last">
+          </div>
+
+          <div class="field">
+            <label for="business">Business name</label>
+            <input type="text" id="business" name="business" autocomplete="organization" placeholder="e.g. Banning Glass Mirror and Screen">
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@company.com">
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone <span class="muted">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(000) 000-0000">
+          </div>
+
+          <div class="field">
+            <label for="help">What do you need help with?</label>
+            <select id="help" name="help">
+              {# Edit these options to match your services. #}
+              <option>Not sure yet</option>
+              <option>Getting found on Google</option>
+              <option>A new website</option>
+              <option>Google Ads</option>
+              <option>Reviews</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="What does the business do, where does it work, and what would you like to change?"></textarea>
+          </div>
+
+          <p class="form__status" role="status" aria-live="polite"></p>
+
+          <div>
+            <button class="btn" type="submit">Send message</button>
+          </div>
+
+          <p class="small muted" style="margin-top:0.5rem;">
+            Your details go straight to my inbox. No mailing list, nothing shared with anyone.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

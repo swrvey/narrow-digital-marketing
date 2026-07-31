@@ -1,0 +1,78 @@
+{#
+  ============================================================================
+  BASE LAYOUT — the HTML shell every page uses.
+  Edit the header/footer once (in _includes/partials/) and all five pages update.
+
+  Each page supplies these in its front matter (the bit at the top between ---):
+    title       -> browser tab + Google result headline
+    description -> Google result snippet, ~155 characters
+  ============================================================================
+#}<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {# ---- SEO: title + description come from each page's front matter ------ #}
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  {# ---- Social share card ------------------------------------------------ #}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  {# ---- Favicons (generated from your logo's monogram) ------------------- #}
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#111111">
+
+  {# ---- Fonts: preload the two used above the fold ----------------------- #}
+  <link rel="preload" href="/assets/fonts/inter-tight-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+
+  {#
+    ---- Structured data ---------------------------------------------------
+    Pulled from src/_data/site.json. It only states facts you enter there.
+    Deliberately no ratings, review counts, or client numbers.
+    Delete this block entirely if you would rather not publish contact details.
+  #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "email": "{{ site.email }}",
+    "telephone": "{{ site.phone }}",
+    "image": "{{ site.url }}/assets/img/og-image.png",
+    "areaServed": "{{ site.serviceArea }}"
+  }
+  </script>
+
+  {# Extra per-page tags, if a page needs them #}
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  {% include "partials/header.njk" %}
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

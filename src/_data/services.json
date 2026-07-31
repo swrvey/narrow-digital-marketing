@@ -1,0 +1,112 @@
+{
+  "_README": "SERVICES — this one file feeds both the homepage teaser and the /services/ page. Edit here, both update. The copy below is finished and written to be true as-is: it describes the work, not results. Nothing here claims a number, a ranking, or an outcome. If you add one later, make sure you can screenshot it. To add a service, copy a block and bump the 'num'. To remove one, delete the block.",
+
+  "items": [
+    {
+      "num": "01",
+      "slug": "local-seo",
+      "title": "Local SEO",
+      "summary": "Show up when someone nearby searches for what you do — on the map, and in the results underneath it.",
+      "detail": [
+        "Most of this work is unglamorous, and that is exactly why it goes undone. A Google Business Profile that is complete and in the right categories. Service pages that say plainly what you do and where you do it. Your name, address and phone number matching everywhere Google looks. A site structure a search engine can actually read.",
+        "I start with whatever is holding you back most — usually the profile — and work down from there. Some of it needs you: photos from real jobs, details about the work you take on, and customers willing to leave a review. I make that part as easy as I can."
+      ],
+      "deliverables": [
+        "Google Business Profile",
+        "Service &amp; location pages",
+        "On-page SEO",
+        "Citations",
+        "Local content"
+      ]
+    },
+    {
+      "num": "02",
+      "slug": "websites",
+      "title": "Websites that get calls",
+      "summary": "A fast, simple site where your phone number and your quote form are impossible to miss.",
+      "detail": [
+        "Hand-coded. No page builder, no bought theme, nothing loading three seconds of scripts before a customer sees your number. It has to be quick on a phone with two bars, because that is where most people will find you — standing in a driveway looking at the thing they want fixed.",
+        "Clear service pages, real photos of your own work, click-to-call on every screen, and a quote form that asks for what you actually need in order to price a job. I write the first draft of the copy, then you tell me where I got your business wrong."
+      ],
+      "deliverables": [
+        "Design &amp; build",
+        "Mobile-first",
+        "Speed",
+        "Quote forms",
+        "Click-to-call"
+      ]
+    },
+    {
+      "num": "03",
+      "slug": "google-ads",
+      "title": "Google Ads &amp; lead generation",
+      "summary": "Paid search for the jobs you want, in the areas you actually drive to.",
+      "detail": [
+        "Setup and management: the keywords worth paying for, the much longer list of negative ones that stop you paying for people who were never going to call, targeting drawn tight around your service area, ad copy that matches what the page actually says, and call tracking so you can see which clicks turned into work.",
+        "Ad spend goes to Google and is separate from what I charge — you will always see the two split out. I will tell you what a realistic starting budget looks like for your area. I will not promise you a cost per lead, because nobody can know that honestly before the data exists."
+      ],
+      "deliverables": [
+        "Campaign setup",
+        "Keywords &amp; negatives",
+        "Ad copy",
+        "Landing pages",
+        "Call tracking"
+      ]
+    },
+    {
+      "num": "04",
+      "slug": "reviews",
+      "title": "Reviews &amp; reputation",
+      "summary": "Make it easy for happy customers to say so, and make sure it is the first thing people see.",
+      "detail": [
+        "A simple system for asking: when the request goes out, how it goes out, and who sends it. Plus templates for replying — to the good ones and the bad ones, because how a business answers a complaint in public gets read by everyone who comes after.",
+        "Real customers only. No incentives, no screening out unhappy people before they reach Google, nothing bought. That gets found eventually, and it is not worth risking a business you spent years building."
+      ],
+      "deliverables": [
+        "Review requests",
+        "Response templates",
+        "Profile monitoring"
+      ]
+    },
+    {
+      "num": "05",
+      "slug": "tracking",
+      "title": "Tracking &amp; reporting",
+      "summary": "Know which calls came from where, in a report that takes two minutes to read.",
+      "detail": [
+        "Call tracking, form tracking and conversion events set up properly, so you can tell the difference between traffic and actual booked work. Traffic is easy to sell you on. Booked work is the only number that pays anyone.",
+        "Then a short summary each month in plain English: what came in, where it came from, what I changed, and what I am doing next. If a number looks bad, it goes in the report too."
+      ],
+      "deliverables": [
+        "Call &amp; form tracking",
+        "Conversion setup",
+        "Monthly report"
+      ]
+    }
+  ],
+
+  "_process_README": "HOW I WORK — shown on the About page. Written to describe your actual process. Step 01 currently says the first look is free; change or delete that line if you would rather not commit to it.",
+
+  "process": [
+    {
+      "num": "01",
+      "title": "Look at what's there",
+      "body": "Before I quote anything, I go through what you already have — your site, your Google Business Profile, what comes up when somebody in your area searches for what you do, and where your calls come from now. Then I walk you through what I found, whether or not you hire me."
+    },
+    {
+      "num": "02",
+      "title": "Agree on the plan",
+      "body": "I tell you what I think is worth doing, in what order, and what it costs. You get the price before any work starts, and you know what is included in it. If something falls outside what we agreed, I ask you first."
+    },
+    {
+      "num": "03",
+      "title": "Build it",
+      "body": "I do the work and keep you posted as it goes — not with a dashboard you will never log into, but by telling you what is done and what is next. You will always know where things stand."
+    },
+    {
+      "num": "04",
+      "title": "Stay on it",
+      "body": "Launching is the start, not the finish. I keep the site maintained, watch what is coming in, and adjust. Every month you get a short summary of what happened and what I am doing about it."
+    }
+  ]
+}

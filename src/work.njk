@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+permalink: /work/
+# ---------------------------------------------------------------------------
+# SEO — title 50–60 characters, description 140–155.
+# ---------------------------------------------------------------------------
+title: "Work — Narrow Digital Marketing"
+description: "Projects I've built and still maintain for small businesses in the Inland Empire, including Banning Glass Mirror and Screen."
+---
+
+{# ==========================================================================
+   WORK — index
+   Lists every case study in /src/work/. To add a project, copy
+   src/work/banning-glass-mirror-and-screen.njk, rename it, and edit the top.
+   It appears here and on the homepage automatically.
+   ========================================================================== #}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="wrap" data-reveal-group>
+    <span class="eyebrow reveal">Work</span>
+    <h1 class="reveal" style="margin-top:1rem;">
+      Selected projects<span class="diamond" aria-hidden="true"></span>
+    </h1>
+    <p class="lede reveal">
+      A short list, kept short on purpose. I take on one project at a time and stay with it
+      after launch.
+    </p>
+  </div>
+</section>
+
+<!-- ============ PROJECT LIST ============ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="work-list" data-reveal-group>
+
+      {% for item in collections.work | reverse %}
+        <a class="work-card reveal" href="{{ item.url }}">
+          <div class="work-card__media">
+            <img src="{{ item.data.cover }}"
+                 srcset="/assets/img/banning-glass-storefront-800.jpg 800w, /assets/img/banning-glass-storefront.jpg 1600w"
+                 sizes="(min-width: 1280px) 1200px, 92vw"
+                 alt="{{ item.data.coverAlt }}" width="1600" height="1000" loading="lazy">
+          </div>
+          <div class="work-card__meta">
+            <span class="work-card__title">{{ item.data.client }}</span>
+            <span class="work-card__tag">{{ item.data.tag }}</span>
+          </div>
+        </a>
+      {% else %}
+        <p class="muted">No projects published yet.</p>
+      {% endfor %}
+
+    </div>
+
+    <!--
+      ADDING A PROJECT: duplicate src/work/banning-glass-mirror-and-screen.njk, rename the file
+      (the filename becomes the URL), then edit the fields at the top. Drop the cover image in
+      src/assets/img/ and point cover: at it. Bump "order" higher than the last project so it
+      sorts to the front. Nothing else to update — it appears here, on the homepage, and in
+      sitemap.xml automatically.
+    -->
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

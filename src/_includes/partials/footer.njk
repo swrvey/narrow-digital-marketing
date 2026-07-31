@@ -1,0 +1,50 @@
+{#
+  ============================================================================
+  FOOTER — shared by every page. Edit here only.
+  Contact details and social links come from src/_data/site.json.
+  ============================================================================
+#}
+<footer class="footer">
+  <div class="wrap">
+
+    <div class="footer__top">
+      <div>
+        <a class="footer__logo" href="/" aria-label="{{ site.name }} — home">
+          <img src="/assets/img/logo-lockup-inverse.svg" alt="{{ site.name }}" width="360" height="138">
+        </a>
+        <p class="small" style="margin-top:1.5rem;color:#8f8f8f;max-width:32ch;">
+          Digital marketing for small businesses in {{ site.serviceArea }}.
+        </p>
+      </div>
+
+      <div>
+        <h4>Pages</h4>
+        <ul class="footer__list">
+          {% for item in site.nav %}
+            <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="footer__list">
+          {# PLACEHOLDER contact details — set them in src/_data/site.json #}
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a></li>
+          <li style="color:#8f8f8f;">{{ site.location }}</li>
+          {% for s in site.social %}
+            {# Delete a row in site.json rather than leaving a '#' link live. #}
+            <li><a href="{{ s.url }}"{% if s.url == '#' %} aria-disabled="true"{% endif %}>{{ s.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; {% year %} {{ site.name }}</span>
+      <span>{{ site.location }}</span>
+    </div>
+
+  </div>
+</footer>

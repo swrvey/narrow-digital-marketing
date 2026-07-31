@@ -1,0 +1,42 @@
+{#
+  ============================================================================
+  HEADER — shared by every page. Edit here only.
+  Nav links come from "nav" in src/_data/site.json.
+  ============================================================================
+#}
+<header class="header">
+  <div class="wrap header__inner">
+
+    {# Logo: your wordmark, exported from the supplied logo file. Do not stretch it. #}
+    <a class="header__logo" href="/" aria-label="{{ site.name }} — home">
+      <img src="/assets/img/logo-wordmark.svg" alt="{{ site.name }}" width="264" height="76">
+    </a>
+
+    {# ---- Desktop nav ---- #}
+    <nav class="nav" aria-label="Main">
+      {% for item in site.nav %}
+        {% if item.url != '/contact/' %}
+          <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endif %}
+      {% endfor %}
+      <a class="btn nav__cta" href="/contact/">Start a project</a>
+    </nav>
+
+    {# ---- Mobile menu toggle ---- #}
+    <button class="menu-btn" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  {# ---- Mobile menu panel ---- #}
+  <div class="menu" id="mobile-menu">
+    {% for item in site.nav %}
+      <a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+    {% endfor %}
+    <div class="menu__meta">
+      {# PLACEHOLDER contact details — set them in src/_data/site.json #}
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+      <a href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+    </div>
+  </div>
+</header>

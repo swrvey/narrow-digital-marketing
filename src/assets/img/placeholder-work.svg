@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Placeholder for project image">
+  <rect width="1600" height="1000" fill="#f4f4f4"/>
+  <rect x="16" y="16" width="1568" height="968" fill="none" stroke="#dcdcdc" stroke-width="2" stroke-dasharray="12 12"/>
+  <text x="800" y="490" text-anchor="middle" font-family="system-ui, sans-serif" font-size="34" font-weight="600" fill="#b3b3b3" letter-spacing="3">PROJECT IMAGE</text>
+  <text x="800" y="536" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" fill="#c4c4c4" letter-spacing="2">1600 × 1000 (16:10)</text>
+</svg>

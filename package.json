@@ -1,0 +1,20 @@
+{
+  "name": "narrow-digital-marketing",
+  "version": "1.0.0",
+  "description": "Static marketing site for Narrow Digital Marketing.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "preview": "eleventy && node tools/make-preview.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/inter-tight": "^5.2.8"
+  }
+}
