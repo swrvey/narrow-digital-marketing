@@ -1,0 +1,12 @@
+{
+  // Tells Cloudflare's "npx wrangler deploy" that this project is plain static
+  // files with no server-side Worker code — just serve whatever npm run build
+  // puts in _site/. Do not remove this file; the dashboard's deploy step
+  // depends on it now that new projects go through the Workers flow.
+  "name": "narrow-digital-marketing",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "_site",
+    "not_found_handling": "404-page" // serves _site/404.html for any unmatched URL
+  }
+}
