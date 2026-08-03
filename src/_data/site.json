@@ -8,12 +8,12 @@
   "url": "https://narrowdigital.tech",
   "_url_note": "Your live domain. No trailing slash. Builds canonical tags, sitemap.xml and robots.txt.",
 
-  "email": "hello@narrowdigital.tech",
-  "_email_note": "CONFIRM — set this address up (Cloudflare Email Routing is free) before launch. It appears in the nav menu, the footer, the CTA band and the contact page.",
+  "email": "narrowdigitalmarketing@gmail.com",
+  "_email_note": "Appears in the nav menu, the footer, the CTA band and the contact page. When you set up Cloudflare Email Routing, change this one line to hello@narrowdigital.tech and forward it here — nothing else needs touching.",
 
-  "phone": "(000) 000-0000",
-  "phoneHref": "+10000000000",
-  "_phone_note": "CONFIRM — the only thing left that is still a dummy value. phoneHref is the tel: link: digits only, with country code, e.g. +19095551234. If you would rather not publish a number, delete both lines and remove the phone rows from contact.njk and footer.njk.",
+  "phone": "(909) 446-6747",
+  "phoneHref": "+19094466747",
+  "_phone_note": "phoneHref is what the tap-to-call link uses: digits only, with the +1 country code.",
 
   "location": "Yucaipa, California",
 
