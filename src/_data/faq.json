@@ -1,0 +1,38 @@
+{
+  "_comment": "FAQ — shown at the bottom of /services/. These also feed Google's FAQ rich results, so keep every answer truthful and specific. Add, remove or reorder freely; the page picks up changes automatically. Keep answers under about 60 words — long answers read as waffle and Google truncates them anyway.",
+
+  "items": [
+    {
+      "q": "What does this cost?",
+      "a": "It depends on what you need, and I'll tell you the number before any work starts. A website is a one-off project fee. Ongoing SEO or ads management is a flat monthly rate. No percentage of ad spend, no surprise line items, and I'll say so plainly if I think you don't need something."
+    },
+    {
+      "q": "Am I locked into a contract?",
+      "a": "No. Monthly work is month to month — if it isn't earning its keep, you tell me and we stop. I'd rather keep a client because the work is worth it than because they signed something."
+    },
+    {
+      "q": "How long until I see results?",
+      "a": "A website takes two to four weeks to build. Google Ads can bring calls the week it goes live. Local SEO is the slow one — usually two to three months before the map rankings move, and longer in a competitive area. Anyone promising page one in a fortnight is guessing."
+    },
+    {
+      "q": "Do you only work with home-service businesses?",
+      "a": "Mostly, and on purpose. Glass, landscaping, plumbing, HVAC, roofing, pest control — businesses that live on phone calls. I know what the customer is searching and what makes them pick up the phone. If you're outside that world, ask anyway and I'll tell you honestly if I'm the right fit."
+    },
+    {
+      "q": "Who owns the website when it's finished?",
+      "a": "You do. The domain stays in your name, the site is yours, and if you ever want to move it elsewhere I'll hand over everything without a fuss. You are not renting your own website from me."
+    },
+    {
+      "q": "What happens after the site launches?",
+      "a": "I stay with it. I take on one project at a time, so I'm not disappearing to the next job the day it goes live. Small changes, new photos, a service you've added — send it over and it gets done."
+    },
+    {
+      "q": "Do you handle Google Business Profile?",
+      "a": "Yes, and for a local business it usually matters more than the website. Claiming it, filling it out properly, keeping the categories and service areas right, and getting the review flow working is often the fastest win available."
+    },
+    {
+      "q": "How do we start?",
+      "a": "Send me a message through the contact page with what you do and where you work. I'll look at where you currently stand in search, then come back with what I'd actually do and what it costs. That first look is free and there's no obligation."
+    }
+  ]
+}

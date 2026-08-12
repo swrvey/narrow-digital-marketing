@@ -78,4 +78,59 @@ description: "Local SEO, hand-coded websites, Google Ads, reviews and tracking f
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+{# Questions live in src/_data/faq.json — edit them there, not here. Each one
+   is a native <details> element, so it opens without any JavaScript and still
+   works if a script fails to load. #}
+<section class="section section--tight">
+  <div class="wrap">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>The things people ask before they call</h2>
+    </div>
+
+    <div class="faq" data-reveal-group>
+      {% for item in faq.items %}
+        <details class="faq__item reveal">
+          <summary class="faq__q">
+            {{ item.q }}
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__a">
+            <p>{{ item.a }}</p>
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+
+    <p class="mt-4 reveal muted small">
+      Something not covered here?
+      <a class="link" href="/contact/">Ask me directly</a> &mdash; I&rsquo;ll give you a straight answer.
+    </p>
+  </div>
+</section>
+
+{#
+  Structured data for the questions above. This is what lets Google show the
+  answers directly in the search results. It is generated from the same JSON
+  file as the visible list, so the two can never disagree — which is exactly
+  what Google requires.
+#}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in faq.items %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+
 {% include "partials/cta.njk" %}

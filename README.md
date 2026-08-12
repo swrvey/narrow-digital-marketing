@@ -42,7 +42,8 @@ above the line it affects.
 
 ### Connecting the contact form (Web3Forms)
 
-1. Go to [web3forms.com](https://web3forms.com) and enter `hello@narrowdigital.tech`.
+1. Go to [web3forms.com](https://web3forms.com) and enter `narrowdigitalmarketing@gmail.com`
+   (the inbox you actually want enquiries to land in).
 2. They email you an access key — a long string like `1a2b3c4d-5e6f-...`.
 3. In `src/contact.njk`, find the line between the two arrow comments and paste your key in
    place of `YOUR-WEB3FORMS-ACCESS-KEY-HERE`.
@@ -80,6 +81,7 @@ src/
   _data/
     site.json          ← your details: domain, email, phone, location, nav
     services.json      ← all service copy + the "how I work" steps
+    faq.json           ← the questions at the bottom of /services/
   _includes/
     layouts/base.njk   ← the HTML shell (meta tags, favicons, fonts)
     layouts/case.njk   ← the frame around every case study
@@ -109,6 +111,12 @@ they can't drift apart. Everything else is in the page file it appears on.
 
 **Your bio** sits between `<!-- ABOUT ME -->` comments in `src/about.njk`. Rewrite it however
 you like — it's written to sound like you, not like a brochure.
+
+**The FAQ** on `/services/` is in `src/_data/faq.json`. Add, remove or reorder questions there
+and both the visible list and the Google structured data update together — they're generated
+from the same file, so they can't contradict each other. Two things to keep in mind: answers
+should stay under about 60 words, and everything in there is a promise you'll be held to. The
+pricing, contract and ownership answers are the ones prospects screenshot.
 
 ---
 
@@ -172,6 +180,29 @@ the two photos. If you ever want it leaner, re-export them as WebP.
 
 ---
 
+## When someone shares the link
+
+Paste the URL into iMessage, WhatsApp, Slack, LinkedIn or X and you get a card: the white logo,
+large, on black. That comes from `src/assets/img/og-image.png` — 1200 × 630, the size every one
+of those apps crops from.
+
+If you change it, keep it at 1200 × 630 and remember **the URL has a `?v=2` on the end** in
+`base.njk`. Every one of those apps caches share images hard and for a long time. Bump it to
+`?v=3` when you replace the file or people will keep seeing the old one for weeks.
+
+There's a square copy at `og-image-square.png` for the handful of apps that crop 1:1.
+
+To force a refresh after a change:
+
+- **iMessage** — caches per-device and is the stubbornest. Deleting the message thread and
+  re-sending the link is usually the only thing that works.
+- **Facebook / Instagram** — [Sharing Debugger](https://developers.facebook.com/tools/debug/) →
+  Scrape Again.
+- **LinkedIn** — [Post Inspector](https://www.linkedin.com/post-inspector/).
+- **X** — posting the link again after a deploy is generally enough.
+
+---
+
 ## What's deliberately not here
 
 No client counters, no star ratings, no testimonial slider, no logo wall, no stock photos of
@@ -193,14 +224,22 @@ are flagged in a comment above them:
 
 ## Design system, in brief
 
+The site runs **black end to end**. There is no light mode and no theme toggle — one theme,
+built properly, rather than two built half-way.
+
 | | |
 |---|---|
-| Ink | `#111111` |
-| Body | `#2b2b2b` |
-| Secondary | `#6e6e6e` |
-| Hairline | `#e6e6e6` |
-| Accent (your logo blue) | `#1017C2` |
-| Accent on dark | `#3b6dff` |
+| Page background | `#000000` |
+| Lifted sections | `#0d0d10` |
+| Image wells, footer | `#141419` |
+| Headings | `#f7f7f8` — 19.6:1 |
+| Body copy | `#c8c8d0` — 12.0:1 |
+| Secondary text | `#9a9aa4` — 7.5:1 |
+| Lightest text allowed | `#86868f` — 5.8:1 |
+| Hairline | `#26262c` |
+| Accent (on-screen) | `#4d6dff` — 5.0:1 |
+| Accent (your logo blue) | `#1017C2` — print and the logo files only |
+| Text on a white button | `#0a0a0b` |
 | Display / headings | Inter Tight, 500–800, `-0.04em` tracking |
 | Body | Inter, 400/500, 1.7 line-height |
 | Spacing | 8px base; sections `clamp(5rem, 9vw, 11rem)` |
@@ -209,6 +248,16 @@ are flagged in a comment above them:
 All of it is at the top of `style.css` as CSS variables. Change a value there and it updates
 everywhere. Every text/background pair passes WCAG AA — if you change a colour, check it before
 you ship.
+
+**Why the accent is two blues.** Your logo blue `#1017C2` is only 2.2:1 against black — legible
+as a shape, not as text. So links and accents on screen use `#4d6dff`, the same hue lifted until
+it passes. The diamond inside the logo files is untouched, and `#1017C2` remains the brand
+colour for anything printed on white.
+
+**Going back to white**, if you ever want to: it's the `--surface` / `--ink` block at the top of
+`style.css`, plus swapping `logo-wordmark-inverse.svg` back to `logo-wordmark.svg` in
+`partials/header.njk` and the lockup in `index.njk`. Both light versions are still in
+`assets/img/`.
 
 **Motion:** elements fade and rise 8px as they scroll in, staggered 60ms apart. All of it turns
 off automatically for anyone with "reduce motion" enabled in their OS settings.

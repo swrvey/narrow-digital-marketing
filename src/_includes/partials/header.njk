@@ -7,9 +7,10 @@
 <header class="header">
   <div class="wrap header__inner">
 
-    {# Logo: your wordmark, exported from the supplied logo file. Do not stretch it. #}
+    {# Logo: the white wordmark, since the site runs on black. The dark version
+       (logo-wordmark.svg) is still in assets if you ever need it on paper. #}
     <a class="header__logo" href="/" aria-label="{{ site.name }} — home">
-      <img src="/assets/img/logo-wordmark.svg" alt="{{ site.name }}" width="264" height="76">
+      <img src="/assets/img/logo-wordmark-inverse.svg" alt="{{ site.name }}" width="264" height="76">
     </a>
 
     {# ---- Desktop nav ---- #}
