@@ -7,8 +7,8 @@
 # at a detail I've kept it general enough to be true, but you know the job and
 # I don't, so correct anything that's off.
 #
-# Two fields still need you: "year" and the "website" link at the bottom.
-# The results section is deliberately empty — see the note in it.
+# One field still needs you: "year". The results section is deliberately
+# empty — see the note in it.
 #
 # The filename sets the URL: /work/banning-glass-mirror-and-screen/
 # ===========================================================================
@@ -32,10 +32,13 @@ order: 1
 # and point these at them.
 cover: "/assets/img/banning-glass-site.jpg"
 coverSmall: "/assets/img/banning-glass-site-800.jpg"
-coverAlt: "The Banning Glass Mirror and Screen homepage, showing the headline 'Glass done right, the first time' over a photo of a glass door"
+coverAlt: "The Banning Glass Mirror and Screen homepage, showing the headline 'Glass Done Right, the First Time' beside a photo of a glass shower enclosure"
 
-# Uncomment and add their live URL once you're happy for people to click through:
-# website: "https://example.com"
+# ---- Live site ----
+# Shown in the facts list as a clickable link, and again at the end of
+# "What I did". Remove this line and both disappear on their own.
+website: "https://banningglass.com"
+websiteLabel: "banningglass.com"
 ---
 
 <div class="case__block">
@@ -73,6 +76,15 @@ coverAlt: "The Banning Glass Mirror and Screen homepage, showing the headline 'G
     <li>Service pages</li>
     <li>Ongoing maintenance</li>
   </ul>
+
+  {# Pulls the URL from `website` in the front matter above — nothing to edit here. #}
+  <p class="mt-4">
+    <a class="link-arrow" href="{{ website }}" target="_blank" rel="noopener">
+      See it live at {{ websiteLabel }}
+      <span aria-hidden="true">&nearr;</span>
+      <span class="sr-only">(opens in a new tab)</span>
+    </a>
+  </p>
 </div>
 
 <div class="case__block">

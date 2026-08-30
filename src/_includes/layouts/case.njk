@@ -40,8 +40,19 @@ layout: layouts/base.njk
           <li><span class="facts__k">Client</span> <span class="facts__v">{{ client }}</span></li>
           <li><span class="facts__k">Year</span> <span class="facts__v">{{ year }}</span></li>
           <li><span class="facts__k">Scope</span> <span class="facts__v">{{ scope }}</span></li>
+          {# Only appears if the project file sets `website`. Shows the domain
+             rather than the word "Visit" — people click a name they recognise. #}
           {% if website %}
-            <li><span class="facts__k">Site</span> <span class="facts__v"><a class="link" href="{{ website }}" rel="noopener">Visit</a></span></li>
+            <li>
+              <span class="facts__k">Live site</span>
+              <span class="facts__v">
+                <a class="link" href="{{ website }}" target="_blank" rel="noopener">
+                  {{ websiteLabel or website | replace("https://", "") | replace("http://", "") }}
+                  <span aria-hidden="true">&nearr;</span>
+                  <span class="sr-only">(opens in a new tab)</span>
+                </a>
+              </span>
+            </li>
           {% endif %}
         </ul>
       </div>
